@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    h2, p{
+      margin: 10px 0;
+    }
+    header{
+      margin-bottom: 40px;
+    }
+    .tip {
+        padding: 10px;
+        background: #333;
+        color: #fff;
+    }
+    .tip .delete {
+        color: red;
+        font-size: 0.8em;
+    }
+  </style>
+  <title>Montly Budget Planer</title>
+</head>
+<body class="teal darken-3">
+
+  <header class="teal darken-2 section z-depth-1">
+    <h3 class="center white-text">Montly Budget Planer</h3>
+    <p class="flow-text grey-text center text-lighten-2">Monthly money tracker</p>
+  </header>
+
+  <div class="container section">
+    <div class="row">
+      <div class="col s12 m6">
+        <form class="card z-depth-1">
+          <div class="card-content">
+            <div class="input-field">
+              <input type="text" id="name" autocomplete="off">
+              <label for="name">Name</label>
+            </div>
+            <div class="input-field">
+              <input type="text" id="cost" autocomplete="off">
+              <label for="cost">Cost ($)</label>
+            </div>
+            <div class="input-field center">
+              <button class="btn-large teal lighten-3 black-text">Add</button>
+            </div>
+            <div class="input-field center">
+              <p id="error" class="red-text"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col s12 m5 push-m1 center">
+        <div class="canvas"></div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAtGQo4RFOnwxJH2YyDClTBBp1wjV9AdvQ",
+    authDomain: "d3-tutorials-56562.firebaseapp.com",
+    databaseURL: "https://d3-tutorials-56562.firebaseio.com",
+    projectId: "d3-tutorials-56562",
+    storageBucket: "d3-tutorials-56562.appspot.com",
+    messagingSenderId: "197984803680"
+  };
+
+  firebase.initializeApp(config);
+
+  const db = firebase.firestore();
+  const settings = { timestampsInSnapshots: true };
+  db.settings(settings);
+
+</script>
+
+    
+
+  <!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js'></script>
+<script src="index.js"></script>
+<script src="graph.js"></script>
+</body>
+</html>
